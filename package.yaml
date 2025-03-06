@@ -183,9 +183,8 @@ Resources:
         - IamRoleLambdaFunction
         - Arn
       Code:
-        S3Bucket:
-          Ref: LambdaS3Bucket
-        S3Key: code.zip
+        S3Bucket: helia-codepipeline-poc-lambda-bucket
+        S3Key: 0f0b81cfd50181a104c760fdfa825aed
       Runtime: nodejs20.x
       Timeout: '30'
       VpcConfig:
@@ -214,7 +213,7 @@ Resources:
     Condition: EndpointTypeALB
     Properties:
       Name: cp-bitbucket-int
-      Scheme: internet-facing
+      Scheme: internal
       SecurityGroups:
       - Ref: SgAlb
       Subnets:

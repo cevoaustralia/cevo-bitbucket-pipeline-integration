@@ -1,23 +1,23 @@
 [
   {
     "ParameterKey": "BitbucketSecret",
-    "ParameterValue": ""
+    "ParameterValue": "xxxxxxxx"
   },
   {
     "ParameterKey": "BitbucketServerUrl",
-    "ParameterValue": ""
+    "ParameterValue": "https://bitbucket-au.itsmyhome.net.au:7990"
   },
   {
     "ParameterKey": "BitbucketToken",
-    "ParameterValue": ""
+    "ParameterValue": "BBDC-XXXXXXXXXXXX"
   },
   {
     "ParameterKey": "EndpointType",
-    "ParameterValue": ""
+    "ParameterValue": "Application Load Balancer"
   },
   {
     "ParameterKey": "LBSubnets",
-    "ParameterValue": ""
+    "ParameterValue": "subnet-04d84e85de861fce4,subnet-05911860eb7e6e133,subnet-08341b1d311ca453a"
   },
   {
     "ParameterKey": "LBSSLCertificateArn",
@@ -25,19 +25,27 @@
   },
   {
     "ParameterKey": "LBCIDR",
-    "ParameterValue": ""
+    "ParameterValue": "10.16.214.0/23"
   },
   {
     "ParameterKey": "LambdaSubnets",
-    "ParameterValue": ""
+    "ParameterValue": "subnet-04d84e85de861fce4,subnet-05911860eb7e6e133,subnet-08341b1d311ca453a"
   },
   {
     "ParameterKey": "S3BucketCodePipelineName",
-    "ParameterValue": ""
+    "ParameterValue": "helia-codepipeline-lambda-poc"
   },
   {
     "ParameterKey": "VPCID",
-    "ParameterValue": ""
+    "ParameterValue": "vpc-0059c69f46653f9fc"
+  },
+  {
+    "ParameterKey": "S3BucketRegion",
+    "ParameterValue": "ap-southeast-2"
+  },
+  {
+    "ParameterKey": "LambdaS3Bucket",
+    "ParameterValue": "helia-codepipeline-poc-lambda-bucket"
   },
   {
     "ParameterKey": "WebProxyHost",
