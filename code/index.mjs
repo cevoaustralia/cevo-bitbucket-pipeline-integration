@@ -2,6 +2,15 @@ import { S3Client } from '@aws-sdk/client-s3';
 import { Upload } from "@aws-sdk/lib-storage";
 import axios from 'axios';
 import crypto from 'crypto';
+const fs = require('fs');
+const https = require('https');
+
+const CA_CERT_PATH = '/trusted_certs.crt';
+const caCert = fs.readFileSync(CA_CERT_PATH);
+
+const httpsAgent = new https.Agent({
+  ca: caCert
+});
 
 const s3 = new S3Client({ apiVersion: '2012-11-05', region: process.env.S3_BUCKET_REGION });
 
@@ -106,6 +115,7 @@ async function downloadFile(repoConfig, proxy) {
         responseType: 'stream',
         baseURL: repoConfig.serverUrl,
         url: `/rest/api/latest/projects/${repoConfig.projectName}/repos/${repoConfig.repoName}/archive?at=refs/heads/${repoConfig.branch}&format=zip`,
+        httpsAgent,
         headers: {
             Authorization: `Bearer ${repoConfig.token}`
         }
