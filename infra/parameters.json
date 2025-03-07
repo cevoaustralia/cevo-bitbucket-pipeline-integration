@@ -13,7 +13,7 @@
   },
   {
     "ParameterKey": "EndpointType",
-    "ParameterValue": "Application Load Balancer"
+    "ParameterValue": "API Gateway"
   },
   {
     "ParameterKey": "LBSubnets",
