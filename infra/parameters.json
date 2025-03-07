@@ -54,5 +54,9 @@
   {
     "ParameterKey": "WebProxyPort",
     "ParameterValue": ""
+  },
+  {
+    "ParameterKey": "TrustedCertBundle",
+    "ParameterValue": "trusted_certs.crt"
   }
 ]

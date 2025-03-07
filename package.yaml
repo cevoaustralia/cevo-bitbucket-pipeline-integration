@@ -60,6 +60,8 @@ Parameters:
     Type: String
     Description: Port of your Proxy server used by the Lambda Function to access the
       Bitbucket server. If you don't need a web proxy leave it blank. e.g. 8080
+  TrustedCertBundle:
+    Type: String
 Conditions:
   EndpointTypeALB:
     Fn::Equals:
@@ -173,6 +175,10 @@ Resources:
             Ref: WebProxyPort
           S3_BUCKET_REGION:
             Ref: S3BucketRegion
+          SSL_CERT_FILE:
+            Ref: TrustedCertBundle
+          REQUESTS_CA_BUNDLE:
+            Ref: TrustedCertBundle
       Handler: index.handler
       KmsKeyArn:
         Fn::GetAtt:
