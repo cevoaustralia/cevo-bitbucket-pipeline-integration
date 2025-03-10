@@ -2,10 +2,10 @@ import { S3Client } from '@aws-sdk/client-s3';
 import { Upload } from "@aws-sdk/lib-storage";
 import axios from 'axios';
 import crypto from 'crypto';
-const fs = require('fs');
-const https = require('https');
+import fs from 'node:fs';
+import https from 'node:https';
 
-const CA_CERT_PATH = '/trusted_certs.crt';
+const CA_CERT_PATH = 'trusted_certs.crt';
 const caCert = fs.readFileSync(CA_CERT_PATH);
 
 const httpsAgent = new https.Agent({
